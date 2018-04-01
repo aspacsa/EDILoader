@@ -26,13 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">NAUTILUS</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAd6HGm5Y1xUSZXQUDSiQibgAAAAACAAAAAAAQZgAAAAEAACAAAABj6V02FWR6ecu5veDqU9ohY4nayZAEFdLZ6biwdhI+0wAAAAAOgAAAAAIAACAAAAD9CTrGlSW/u7oH781A6bMxlio20Q0+SuD2xDVtLpo2Z5AAAAA86wpfzXlMOB8QjTftZo4pCr5bD5RidAZwk6qESmt6wVRAQG9R1c+heZamjB1SztK9DItTDCdYI+HPLuaYRDXTlBk6JtHX6yN30Lt3KfoJaTHF+NIsD24nlDGTXNKZCGKYud4Km/91Aws5XIobwJ+bpP2mFxlknhdgsT7KlPC4X5FNCUqfsDyi5+M/KZnk4OFAAAAAMdLcpzx4iJXNwD9IhangydJR5FtCXijvglz/hfGKcmfE/EVuIEcmY4MquiQas3AirAMsSWNv7PqmBAuL+90RAA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAd6HGm5Y1xUSZXQUDSiQibgAAAAACAAAAAAAQZgAAAAEAACAAAADuUPkL4egIwvfNNsAtQ3wDKf3OmzVxAhiIts1U1rMj2gAAAAAOgAAAAAIAACAAAADqDfh0vweW34OIGtPYR2H1YgxHQwUXT/H3Pcf3OxjKnJAAAABU1oF82IQI69x+gVUMGsNx629cmLLbqGgUY+CG7ltwvDroGJpc8y/wD77K2rL/q9R51kFze8vf0ZWQvWVWzyg7Jdi9M9nT2GcaaAKYR0ObY4eBVyBuUKKmRM7Y/OTF2w0RNVahYGovdvOAMXEGri5Gb1ZUEaPh+hUfBhtGoNzamMtUuBZn/Rw655qBwYJDUoxAAAAANfDB+DzpcQnYMRMQEnNITPSnjYmPo6r8gB9ygwlT5DIKe9ZRf1CnmGvzMOeCHPV4OQYtulv1gJr8re7gD1LJhQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="ETL_EDI_DataLoader.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="AUX_Update_Segment_Stage.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="AUX_Classify_Segments.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AUX_Distribute_Segments.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="HealthFinancialDW.conmgr" />
@@ -135,10 +135,10 @@
                 <SSIS:Property SSIS:Name="Name">ETL_EDI_DataLoader</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">37</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">39</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{742D9373-A693-4C03-9FF0-0E04877652F1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AE2F009E-46F4-4024-A1A2-525FC6C201F2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -320,10 +320,10 @@
                 <SSIS:Property SSIS:Name="Name">AUX_Update_Segment_Stage</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{14B26CA4-962C-4AD3-808E-C72D237361AD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ADA142D6-225B-44EA-934E-9C64CCC84DE8}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -331,16 +331,16 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AUX_Classify_Segments.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="AUX_Distribute_Segments.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{B3A0F58B-C976-4E20-B5F4-0BE0C34D4925}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">AUX_Classify_Segments</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{51E101F2-1DF5-430F-AD3E-9B5DFD5E15B3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AUX_Distribute_Segments</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0110481B-E46E-46D8-8458-8B2693697BA5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5C029645-9F87-48C2-A985-E8AB8EDE0D83}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

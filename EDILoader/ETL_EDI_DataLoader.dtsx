@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ETL_EDI_DataLoader"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{F8AD5745-40C1-4A9B-9D33-80EF65437BB0}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{82A198EE-F8A0-446C-80CA-86DD07F843DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -121,7 +121,34 @@
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC - Child Packages\Execute Package Task"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{96AB11C5-7068-45AF-989D-1CA1BA3DB025}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package Task"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>AUX_Distribute_Segments.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC - Child Packages.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E1957A68-AFB3-4002-A646-CF01E70CAC1D}"
+          DTS:From="Package\SEQC - Child Packages\EPT - AUX_Update_Segment_Stage"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC - Child Packages\Execute Package Task" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\SEQC - Data Load Procedures"
@@ -482,14 +509,9 @@
                               name="SourceFile" />
                             <externalMetadataColumn
                               refId="Package\SEQC - Data Load Procedures\FELC - Iterarte EDI Directory\DFT - Load EDI Segments Into Stage\OLE_DEST - Write Segments To Stage.Inputs[OLE DB Destination Input].ExternalColumns[TypeID]"
-                              codePage="1252"
-                              dataType="str"
-                              length="7"
+                              dataType="wstr"
+                              length="50"
                               name="TypeID" />
-                            <externalMetadataColumn
-                              refId="Package\SEQC - Data Load Procedures\FELC - Iterarte EDI Directory\DFT - Load EDI Segments Into Stage\OLE_DEST - Write Segments To Stage.Inputs[OLE DB Destination Input].ExternalColumns[TransactionID]"
-                              dataType="i4"
-                              name="TransactionID" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -1960,6 +1982,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Size="252,41.6"
           Id="Package\SEQC - Child Packages\EPT - AUX_Update_Segment_Stage"
           TopLeft="31.1347040398826,36.0873965636257" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\SEQC - Child Packages\Execute Package Task"
+          TopLeft="41.8285812280618,104.988237765091" />
+        <EdgeLayout
+          Id="Package\SEQC - Child Packages.PrecedenceConstraints[Constraint]"
+          TopLeft="157.134704039883,77.6873965636257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.1061228118208,27.3008412014654"
+              Start="0,0"
+              End="-24.1061228118208,19.8008412014654">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.65042060073272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.65042060073272"
+                    Point2="0,13.6504206007327"
+                    Point3="-4,13.6504206007327" />
+                  <mssgle:LineSegment
+                    End="-20.1061228118208,13.6504206007327" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.1061228118208,13.6504206007327"
+                    Point2="-24.1061228118208,13.6504206007327"
+                    Point3="-24.1061228118208,17.6504206007327" />
+                  <mssgle:LineSegment
+                    End="-24.1061228118208,19.8008412014654" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -2159,26 +2219,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.6367430016879,-133.97815118727"
+              EndConnector="60.6367430016882,-133.97815118727"
               Start="0,0"
-              End="53.1367430016879,-133.97815118727">
+              End="53.1367430016882,-133.97815118727">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="26.318371500844,0" />
+                    End="26.3183715008441,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="26.318371500844,0"
-                    Point2="30.318371500844,0"
-                    Point3="30.318371500844,-4" />
+                    Point1="26.3183715008441,0"
+                    Point2="30.3183715008441,0"
+                    Point3="30.3183715008441,-4" />
                   <mssgle:LineSegment
-                    End="30.318371500844,-129.97815118727" />
+                    End="30.3183715008441,-129.97815118727" />
                   <mssgle:CubicBezierSegment
-                    Point1="30.318371500844,-129.97815118727"
-                    Point2="30.318371500844,-133.97815118727"
-                    Point3="34.318371500844,-133.97815118727" />
+                    Point1="30.3183715008441,-129.97815118727"
+                    Point2="30.3183715008441,-133.97815118727"
+                    Point3="34.3183715008441,-133.97815118727" />
                   <mssgle:LineSegment
-                    End="53.1367430016879,-133.97815118727" />
+                    End="53.1367430016882,-133.97815118727" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
