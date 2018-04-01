@@ -1,0 +1,184 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/31/2018 7:24:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NAUTILUS"
+  DTS:CreatorName="Nautilus\Ernest"
+  DTS:DTSID="{BBE41789-2239-4261-9515-E4CCB172DBED}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="AUX_Update_Segment_Stage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{ADA142D6-225B-44EA-934E-9C64CCC84DE8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC - Main Procedures"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{80BCEED6-2352-4605-90DD-422608952678}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC - Main Procedures">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC - Main Procedures\SQL - Index Stage Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1D9012CC-B014-4A63-BF95-AD02E89BC160}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Index Stage Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB830F9A-9A1B-4B6E-845E-BB5CE8EBF27E}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="&#xA;IF NOT EXISTS (SELECT 1&#xA;&#x9;&#x9;&#x9;&#x9;FROM sys.indexes I              &#xA;&#x9;&#x9;&#x9;&#x9;WHERE I.Name = 'CI_Raw_Segment~TypeID'&#xA;&#x9;&#x9;&#x9;&#x9;AND I.object_id = OBJECT_ID('Stage.Raw_Segment'))&#xA;BEGIN&#xA;&#x9;CREATE CLUSTERED INDEX &quot;CI_Raw_Segment~TypeID&quot;&#xA;&#x9;ON Stage.Raw_Segment (TypeID);&#xA;END&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;IF NOT EXISTS (SELECT 1&#xA;&#x9;&#x9;&#x9;&#x9;FROM sys.indexes I              &#xA;&#x9;&#x9;&#x9;&#x9;WHERE I.Name = 'NCI_Raw_Segment~TransactionID'&#xA;&#x9;&#x9;&#x9;&#x9;AND I.object_id = OBJECT_ID('Stage.Raw_Segment'))&#xA;BEGIN&#xA;&#x9;CREATE NONCLUSTERED INDEX &quot;NCI_Raw_Segment~TransactionID&quot;&#xA;&#x9;ON Stage.Raw_Segment (TransactionID)&#xA;&#x9;INCLUDE (Segments, GroupID, LineID, SourceFile);&#xA;END&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC - Main Procedures\SQL - Update Segment Trans"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{21886C1D-A807-44BE-89D5-2ABB0B425EB1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Update Segment Trans"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB830F9A-9A1B-4B6E-845E-BB5CE8EBF27E}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXECUTE Stage.usp_UPD_Segment_Trans;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC - Main Procedures\SQL - Update Segment Type"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Update the TypeID field."
+          DTS:DTSID="{AEFF1F59-9546-4484-9A6F-1AE1EA9E2D2E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Update Segment Type"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB830F9A-9A1B-4B6E-845E-BB5CE8EBF27E}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXECUTE Stage.usp_UPD_Segment_Type;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC - Main Procedures.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{740F0FA2-1670-4516-A0A6-32CB79D52F0A}"
+          DTS:From="Package\SEQC - Main Procedures\SQL - Update Segment Type"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC - Main Procedures\SQL - Update Segment Trans" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC - Main Procedures.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D3E7A2E6-E50C-498F-88FB-A73F40DCCF16}"
+          DTS:From="Package\SEQC - Main Procedures\SQL - Update Segment Trans"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQC - Main Procedures\SQL - Index Stage Table" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\SEQC - Main Procedures\SQL - Index Stage Table"
+          TopLeft="35.3006813909848,153.700843389306" />
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\SEQC - Main Procedures\SQL - Update Segment Type"
+          TopLeft="25.7006813909848,18.5882364523864" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\SEQC - Main Procedures\SQL - Update Segment Trans"
+          TopLeft="24.1006813909848,86.4470614832578" />
+        <EdgeLayout
+          Id="Package\SEQC - Main Procedures.PrecedenceConstraints[Constraint]"
+          TopLeft="132.100681390985,60.1882364523864">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.2588250308714"
+              Start="0,0"
+              End="0,18.7588250308714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.7588250308714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC - Main Procedures.PrecedenceConstraints[Constraint 1]"
+          TopLeft="132.100681390985,128.047061483258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6537819060487"
+              Start="0,0"
+              End="0,18.1537819060487">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1537819060487" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275.2,228"
+          Size="275.2,271.2"
+          Id="Package\SEQC - Main Procedures"
+          TopLeft="59.1836744772797,37.4924375006073" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

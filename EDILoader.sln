@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "EDILoader", "EDILoader\EDILoader.dtproj", "{D1D93ED6-A981-43CA-AAFA-EAE0CDC12E23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1D93ED6-A981-43CA-AAFA-EAE0CDC12E23}.Development|Default.ActiveCfg = Development
+		{D1D93ED6-A981-43CA-AAFA-EAE0CDC12E23}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22B15556-3B62-4AC4-B322-271AD4A7FBB6}
+	EndGlobalSection
+EndGlobal
