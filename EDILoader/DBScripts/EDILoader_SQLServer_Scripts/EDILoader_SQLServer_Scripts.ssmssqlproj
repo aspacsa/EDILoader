@@ -19,11 +19,59 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="CI_Raw_Segment~TypeID_Index.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CI_Raw_Segment~TypeID_Index.sql</FullPath>
+        </FileNode>
+        <FileNode Name="NCI_Raw_Segment~TransactionID_Index.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>NCI_Raw_Segment~TransactionID_Index.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Raw_Segment_Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Raw_Segment_Table.sql</FullPath>
+        </FileNode>
         <FileNode Name="SegmentsDataParsers.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:NAUTILUS\SQLSERVER2017:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>NAUTILUS\SQLSERVER2017</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SegmentsDataParsers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ST_Segment_Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:NAUTILUS\SQLSERVER2017:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>NAUTILUS\SQLSERVER2017</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ST_Segment_Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_UPD_Segment_Trans.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>usp_UPD_Segment_Trans.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_UPD_Segment_Type.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>usp_UPD_Segment_Type.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_UPD_ST_Segment.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:NAUTILUS\SQLSERVER2017:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>NAUTILUS\SQLSERVER2017</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_UPD_ST_Segment.sql</FullPath>
+        </FileNode>
+        <FileNode Name="uv_ST_Segment.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:NAUTILUS\SQLSERVER2017:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>NAUTILUS\SQLSERVER2017</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>uv_ST_Segment.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

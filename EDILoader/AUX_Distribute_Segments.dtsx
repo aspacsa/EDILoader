@@ -11,20 +11,20 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AUX_Distribute_Segments"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{5C029645-9F87-48C2-A985-E8AB8EDE0D83}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{9FA79503-9BEF-47FD-B64C-B6D93200C24A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\DFT - Store 835 Segments"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{9713AB60-837C-4D98-9E7C-B4C60C7E49AC}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="DFT - Store 835 Segments"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -32,11 +32,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="OLE_DST - Write Segment"
               usesDispositions="true"
               version="4">
               <properties>
@@ -89,7 +89,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Connections[OleDbConnection]"
                   connectionManagerID="{CB830F9A-9A1B-4B6E-845E-BB5CE8EBF27E}:external"
                   connectionManagerRefId="Project.ConnectionManagers[HealthFinancialDW]"
                   description="The OLE DB runtime connection used to access the database."
@@ -97,67 +97,67 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GroupID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].Columns[GroupID]"
                       cachedDataType="i4"
                       cachedName="GroupID"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_GroupID]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupID]" />
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_GroupID]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[GroupID]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LineID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].Columns[LineID]"
                       cachedDataType="i4"
                       cachedName="LineID"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_LineID]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineID]" />
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_LineID]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[LineID]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SourceFile]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].Columns[SourceFile]"
                       cachedDataType="wstr"
                       cachedLength="256"
                       cachedName="SourceFile"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_SourceFile]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SourceFile]" />
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_SourceFile]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[SourceFile]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Segments]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].Columns[Segments]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="550"
                       cachedName="Segments"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_Segments]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Segments]" />
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_Segments]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[Segments]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Identifier_Code]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Identifier_Code]"
                       dataType="i4"
                       name="Identifier_Code" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Control_Number]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Control_Number]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Control_Number" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_GroupID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_GroupID]"
                       dataType="i4"
                       name="Aux_GroupID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_LineID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_LineID]"
                       dataType="i4"
                       name="Aux_LineID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_SourceFile]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_SourceFile]"
                       dataType="wstr"
                       length="256"
                       name="Aux_SourceFile" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aux_Segments]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input].ExternalColumns[Aux_Segments]"
                       codePage="1252"
                       dataType="str"
                       length="550"
@@ -167,22 +167,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -191,11 +191,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Source"
+              refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="OLE_SRC - Get ST * 835 Raw Segment"
               usesDispositions="true"
               version="7">
               <properties>
@@ -221,9 +221,7 @@
 	SourceFile,
 	Segments	
 FROM
-	Stage.Raw_Segment
-WHERE 
-	(TypeID = 'ST' AND TransactionID = 835)
+	Stage.uf_Get_Raw_Segment('ST', 835)
 ;</property>
                 <property
                   dataType="System.String"
@@ -249,7 +247,7 @@ WHERE
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Connections[OleDbConnection]"
                   connectionManagerID="{CB830F9A-9A1B-4B6E-845E-BB5CE8EBF27E}:external"
                   connectionManagerRefId="Project.ConnectionManagers[HealthFinancialDW]"
                   description="The OLE DB runtime connection used to access the database."
@@ -257,66 +255,66 @@ WHERE
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[GroupID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupID]"
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[GroupID]"
                       name="GroupID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[LineID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineID]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineID]"
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[LineID]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[LineID]"
                       name="LineID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SourceFile]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[SourceFile]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SourceFile]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[SourceFile]"
                       name="SourceFile"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Segments]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[Segments]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Segments]"
+                      externalMetadataColumnId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[Segments]"
                       length="550"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Segments]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].Columns[Segments]"
                       name="Segments"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
                       dataType="i4"
                       name="GroupID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[LineID]"
                       dataType="i4"
                       name="LineID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
                       dataType="wstr"
                       length="256"
                       name="SourceFile" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Segments]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output].ExternalColumns[Segments]"
                       codePage="1252"
                       dataType="str"
                       length="550"
@@ -324,43 +322,43 @@ WHERE
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[GroupID]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[GroupID]"
                       name="GroupID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineID]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[LineID]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineID]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[LineID]"
                       name="LineID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
                       dataType="wstr"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
                       name="SourceFile" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Segments]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[Segments]"
                       codePage="1252"
                       dataType="str"
                       length="550"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Segments]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[Segments]"
                       name="Segments" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -371,15 +369,43 @@ WHERE
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\DFT - Store 835 Segments.Paths[OLE DB Source Output]"
+              endId="Package\DFT - Store 835 Segments\OLE_DST - Write Segment.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Update ST Segment Table Elements"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{015B0C52-85B9-40C6-A3FA-CEE8C23D06C9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Update ST Segment Table Elements"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CB830F9A-9A1B-4B6E-845E-BB5CE8EBF27E}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="EXECUTE Stage.usp_UPD_ST_Segment;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6C1EBC58-DE33-4D11-A73A-B742E02F8503}"
+      DTS:From="Package\DFT - Store 835 Segments"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL - Update ST Segment Table Elements" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -391,53 +417,91 @@ WHERE
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="33.1428577072767,34.8705887243409" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="71.4285726449928,62.4000008751365" />
+          Size="203.2,41.6"
+          Id="Package\DFT - Store 835 Segments"
+          TopLeft="33.1428577072767,34.8705887243409" />
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="69.142858320353,147.435296185371" />
+          Size="276.8,41.6"
+          Id="Package\SQL - Update ST Segment Table Elements"
+          TopLeft="39.428572100036,108.282354459796" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="146.228572644993,104.000000875136">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="134.742857707277,76.4705887243409">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.11428567536024,43.4352953102349"
+              EndConnector="43.0857143927593,31.8117657354547"
               Start="0,0"
-              End="8.11428567536024,35.9352953102349">
+              End="43.0857143927593,24.3117657354547">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.7176476551175" />
+                    End="0,11.9058828677274" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.7176476551175"
-                    Point2="0,21.7176476551175"
-                    Point3="4,21.7176476551175" />
+                    Point1="0,11.9058828677274"
+                    Point2="0,15.9058828677274"
+                    Point3="4,15.9058828677274" />
                   <mssgle:LineSegment
-                    End="4.11428567536024,21.7176476551175" />
+                    End="39.0857143927593,15.9058828677274" />
                   <mssgle:CubicBezierSegment
-                    Point1="4.11428567536024,21.7176476551175"
-                    Point2="8.11428567536024,21.7176476551175"
-                    Point3="8.11428567536024,25.7176476551175" />
+                    Point1="39.0857143927593,15.9058828677274"
+                    Point2="43.0857143927593,15.9058828677274"
+                    Point3="43.0857143927593,19.9058828677274" />
                   <mssgle:LineSegment
-                    End="8.11428567536024,35.9352953102349" />
+                    End="43.0857143927593,24.3117657354547" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Store 835 Segments">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\DFT - Store 835 Segments\OLE_DST - Write Segment"
+          TopLeft="69.142858320353,147.435296185371" />
+        <NodeLayout
+          Size="262.4,41.6"
+          Id="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment"
+          TopLeft="71.4285726449928,62.4000008751365" />
+        <EdgeLayout
+          Id="Package\DFT - Store 835 Segments.Paths[OLE DB Source Output]"
+          TopLeft="202.628572644993,104.000000875136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.8857143246398,43.4352953102345"
+              Start="0,0"
+              End="-31.8857143246398,35.9352953102345">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7176476551172" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7176476551172"
+                    Point2="0,21.7176476551172"
+                    Point3="-4,21.7176476551172" />
+                  <mssgle:LineSegment
+                    End="-27.8857143246398,21.7176476551172" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.8857143246398,21.7176476551172"
+                    Point2="-31.8857143246398,21.7176476551172"
+                    Point3="-31.8857143246398,25.7176476551172" />
+                  <mssgle:LineSegment
+                    End="-31.8857143246398,35.9352953102345" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -450,15 +514,7 @@ WHERE
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\DFT - Store 835 Segments\OLE_DST - Write Segment">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -467,6 +523,14 @@ WHERE
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Store 835 Segments\OLE_SRC - Get ST * 835 Raw Segment">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
